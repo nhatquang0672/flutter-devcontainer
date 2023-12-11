@@ -25,19 +25,19 @@ class MovieRepository {
   Color weeklyTopColor, weeklyHotColor, weeklyTop250Color, todayPlayBg;
 
   MovieRepository(
-      {this.hotShowBeans,
-      this.comingSoonBeans,
-      this.hotBeans,
-      this.weeklyBeans,
-      this.top250Beans,
-      this.todayUrls,
-      this.weeklyTopBean,
-      this.weeklyHotBean,
-      this.weeklyTop250Bean,
-      this.weeklyTopColor,
-      this.weeklyHotColor,
-      this.weeklyTop250Color,
-      this.todayPlayBg});
+      {required this.hotShowBeans,
+      required this.comingSoonBeans,
+      required this.hotBeans,
+      required this.weeklyBeans,
+      required this.top250Beans,
+      required this.todayUrls,
+      required this.weeklyTopBean,
+      required this.weeklyHotBean,
+      required this.weeklyTop250Bean,
+      required this.weeklyTopColor,
+      required this.weeklyHotColor,
+      required this.weeklyTop250Color,
+      required this.todayPlayBg});
 
   Future<MovieRepository> requestAPI() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();

@@ -48,7 +48,7 @@ class MyRouter {
           return PersonDetailPage(params['personImgUrl'], params['id']);
       }
     }
-    return null;
+    return Placeholder();
   }
 
 //
