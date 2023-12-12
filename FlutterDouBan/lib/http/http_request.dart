@@ -6,9 +6,9 @@ import 'package:http/http.dart' as http;
 typedef RequestCallBack = void Function(Map data);
 
 class HttpRequest {
-  static requestGET (
+  static requestGET(
       String authority, String unencodedPath, RequestCallBack callBack,
-      [Map<String, String> queryParameters]) async {
+      [Map<String, String>? queryParameters]) async {
     try {
       var httpClient = new HttpClient();
       //http://api.douban.com/v2/movie/top250?start=25&count=10
@@ -27,7 +27,7 @@ class HttpRequest {
 
   HttpRequest(this.baseUrl);
 
-  Future<dynamic> get(String uri, {Map<String, String> headers}) async {
+  Future<dynamic> get(String uri, {Map<String, String>? headers}) async {
     try {
       http.Response response = await http.get(baseUrl + uri, headers: headers);
       final statusCode = response.statusCode;
@@ -41,7 +41,8 @@ class HttpRequest {
     }
   }
 
-  Future<dynamic> getResponseBody(String uri, {Map<String, String> headers}) async {
+  Future<dynamic> getResponseBody(String uri,
+      {Map<String, String>? headers}) async {
     try {
       http.Response response = await http.get(baseUrl + uri, headers: headers);
       final statusCode = response.statusCode;
@@ -55,9 +56,11 @@ class HttpRequest {
     }
   }
 
-  Future<dynamic> post(String uri, dynamic body, {Map<String, String> headers}) async {
+  Future<dynamic> post(String uri, dynamic body,
+      {Map<String, String>? headers}) async {
     try {
-      http.Response response = await http.post(baseUrl + uri, body: body, headers: headers);
+      http.Response response =
+          await http.post(baseUrl + uri, body: body, headers: headers);
       final statusCode = response.statusCode;
       final responseBody = response.body;
       var result = Convert.jsonDecode(responseBody);
@@ -69,5 +72,3 @@ class HttpRequest {
     }
   }
 }
-
-
