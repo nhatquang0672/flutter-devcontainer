@@ -1,3 +1,5 @@
+//import 'package:palette_generator/palette_generator.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
 import 'package:palette_generator/palette_generator.dart';
 
@@ -9,17 +11,18 @@ class PickImgMainColor {
       ImageProvider imageProvider, ColorCallBack callBack) async {
     var paletteGenerator =
         await PaletteGenerator.fromImageProvider(imageProvider);
-    if (paletteGenerator.colors.isNotEmpty) {
+    if (paletteGenerator != null && paletteGenerator.colors.isNotEmpty) {
       callBack(paletteGenerator.colors.toList()[0]);
     } else {
-      callBack(Colors.red);
+      callBack(null);
     }
   }
 
-  static Future<Color?> pick2(ImageProvider imageProvider) async {
+  static Future<void> pick2(
+      ImageProvider imageProvider) async {
     var paletteGenerator =
-        await PaletteGenerator.fromImageProvider(imageProvider);
-    if (paletteGenerator.colors.isNotEmpty) {
+    await PaletteGenerator.fromImageProvider(imageProvider);
+    if (paletteGenerator != null && paletteGenerator.colors.isNotEmpty) {
       return (paletteGenerator.colors.toList()[0]);
     } else {
       return (null);

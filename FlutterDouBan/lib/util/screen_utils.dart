@@ -40,7 +40,7 @@ class ScreenUtils {
   double _statusBarHeight = 0.0;
   double _bottomBarHeight = 0.0;
   double _appBarHeight = 0.0;
-  late MediaQueryData _mediaQueryData;
+  MediaQueryData _mediaQueryData;
 
   static final ScreenUtils _singleton = ScreenUtils();
 

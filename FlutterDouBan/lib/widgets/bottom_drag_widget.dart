@@ -56,7 +56,7 @@ class DragContainer extends StatefulWidget {
       : assert(drawer != null),
         assert(defaultShowHeight != null),
         assert(height != null),
-        super(key: key) {
+        super(key: key){
     _controller = DragController();
   }
 
@@ -86,15 +86,15 @@ class _DragContainerState extends State<DragContainer>
 
 //    if (controller != null) {
     _controller
-        .setDrag((double value, ScrollNotificationListener notification) {
-      if (notification != ScrollNotificationListener.edge) {
-        _handleDragEnd(null);
-      } else {
-        setState(() {
-          offsetDistance = offsetDistance + value;
-        });
-      }
-    });
+          .setDrag((double value, ScrollNotificationListener notification) {
+        if (notification != ScrollNotificationListener.edge) {
+          _handleDragEnd(null);
+        } else {
+          setState(() {
+            offsetDistance = offsetDistance + value;
+          });
+        }
+      });
 //    }
     super.initState();
   }
@@ -104,8 +104,8 @@ class _DragContainerState extends State<DragContainer>
     return GestureRecognizerFactoryWithHandlers<
         MyVerticalDragGestureRecognizer>(
       () => MyVerticalDragGestureRecognizer(flingListener: (bool isFling) {
-        _isFling = isFling;
-      }), //constructor
+            _isFling = isFling;
+          }), //constructor
       (MyVerticalDragGestureRecognizer instance) {
         //initializer
         instance
@@ -197,7 +197,6 @@ class _DragContainerState extends State<DragContainer>
           setState(() {});
         }
       });
-
     ///自己滚动
     animalController.forward();
   }

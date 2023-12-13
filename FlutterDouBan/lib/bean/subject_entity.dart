@@ -1,13 +1,14 @@
 class SubjectEntity {
+
 //  "subject":Object{...},
 //  "rank":1,
 //  "delta":0
 
-  Subject? subject;
+  Subject subject;
   var rank;
   var delta;
 
-  SubjectEntity.fromMap(Map<String, dynamic> map) {
+  SubjectEntity.fromMap(Map<String, dynamic> map){
     rank = map['rank'];
     delta = map['delta'];
     var subjectMap = map['subject'];
@@ -16,11 +17,11 @@ class SubjectEntity {
 }
 
 class Subject {
-  bool? tag = false;
-  Rating? rating;
+  bool tag = false;
+  Rating rating;
   var genres;
   var title;
-  List<Cast>? casts;
+  List<Cast> casts;
   var durations;
   var collect_count;
   var mainland_pubdate;
@@ -30,7 +31,7 @@ class Subject {
   var directors;
   var pubdates;
   var year;
-  Images? images;
+  Images images;
   var alt;
   var id;
 
@@ -58,8 +59,9 @@ class Subject {
   }
 
   _converCasts(casts) {
-    return casts.map<Cast>((item) => Cast.fromMap(item)).toList();
+    return casts.map<Cast>((item)=>Cast.fromMap(item)).toList();
   }
+
 }
 
 class Images {
@@ -76,11 +78,13 @@ class Rating {
   Rating(this.average, this.max);
 }
 
+
+
 class Cast {
   var id;
   var name_en;
   var name;
-  Avatar? avatars;
+  Avatar avatars;
   var alt;
   Cast(this.avatars, this.name_en, this.name, this.alt, this.id);
 
@@ -90,11 +94,12 @@ class Cast {
     name = map['name'];
     alt = map['alt'];
     var tmp = map['avatars'];
-    if (tmp == null) {
+    if(tmp == null){
       avatars = null;
-    } else {
+    }else{
       avatars = Avatar(tmp['small'], tmp['large'], tmp['medium']);
     }
+
   }
 }
 

@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -30,13 +30,13 @@ dependencies:
 
   flutter_webview_plugin: 0.4.0
 
-  webview_flutter: ^4.4.2
+  webview_flutter: ^3.0.0
 
   video_player: ^2.2.17
 
 
   # 用来模拟网络返回的数据，这些数据是真实的，这里模拟
-  dio: ^5.4.0
+  dio: ^4.0.4
 
   fluttertoast: ^8.0.8
 

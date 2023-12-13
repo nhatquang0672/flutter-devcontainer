@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+
 ///点击图片放大显示
 class AnimalPhoto {
-  AnimalPhoto.show(BuildContext context, String url, {required double width}) {
+  AnimalPhoto.show(BuildContext context, String url, {double width}) {
+    if (width == null) {
+      width = MediaQuery.of(context).size.width;
+    }
     Navigator.of(context)
         .push(MaterialPageRoute<void>(builder: (BuildContext context) {
       return Container(
@@ -23,8 +27,8 @@ class AnimalPhoto {
 }
 
 class _PhotoHero extends StatelessWidget {
-  const _PhotoHero(
-      {required this.photo, required this.onTap, required this.width});
+  const _PhotoHero({Key key, this.photo, this.onTap, this.width})
+      : super(key: key);
 
   final String photo;
   final VoidCallback onTap;
